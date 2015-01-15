@@ -1,10 +1,11 @@
 html, body {
+    font-family: sans-serif;
     height: 100%;
     padding: 0;
     margin: 0;
 }
 header, footer, main, article, aside, section {
-    box-shadow: #111 0 0 1px 0 inset;
+    /*box-shadow: #111 0 0 1px 0 inset;*/
 }
 article {
     display: flex;
@@ -12,6 +13,9 @@ article {
     height: 100%;
 }
 header, footer {
+    display: flex;
+    background-color: #e7e7e7;
+    min-height: 100px;
 }
 main {
     display: flex;
@@ -20,7 +24,56 @@ main {
 }
 aside {
     flex: 4;
+    max-width: 200px;
 }
 section {
     flex: 8;
+    text-align: center;
+}
+
+.search-cnt {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    max-width: 70%;
+    min-height: 50px;
+    margin: auto;
+    font-size: 30px;
+}
+.search-cnt input {
+    background-color: transparent;
+    border: 2px solid;
+    border-width: 0 0 2px 0;
+    flex: 1;
+    outline: none;
+    margin: auto 10px;
+    font-size: 30px;
+}
+.search-cnt label {
+    padding: 10px;
+    margin: auto;
+}
+.search-cnt span {
+    flex-direction: end;
+}
+video {
+    background-color: #111;
+    border: 1px solid #bbb;
+}
+nav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul > li {
+    flex: 1;
+    background-color: #eee;
 }
