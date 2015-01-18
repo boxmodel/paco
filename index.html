@@ -1,17 +1,19 @@
 <!doctype html>
 <html>
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
 </head>
-<body>
+<body ng-app="myApp">
 
 <article>
     
-<header>
+<header class="grad-blue">
     <div class="search-cnt">
         <label>Paco</label>
-        <input type="text" />
+        <input type="text" ng-model="bindme" ng-class="{'grad-red' : $dirty}" />
         <span><i class="fa fa-search fa-2x"></i></span>
     </div>
 </header>
@@ -19,12 +21,16 @@
 <main>
     <nav>
         <ul>
-            <li>video</li>
-            <li>details</li>
+            <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">video</li>
+            <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">details</li>
         </ul>
     </nav>
     <section>
         <video></video>
+        
+        <div ng-controller="MyController">
+            <p ng-repeat="item in messages">from : {{item.from}} body: {{item.body}}</p>
+        </div>
     </section>
 </main>
 
@@ -35,6 +41,7 @@
 
 
 
-
+    <script type="text/javascript" src="scripts/fb.js"></script>
+    <script type="text/javascript" src="scripts/ng.js"></script>
 </body>
 </html>
