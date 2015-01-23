@@ -4,6 +4,46 @@ html, body {
     padding: 0;
     margin: 0;
 }
+/* globals */
+.hide {
+    display: none !important;
+}
+.no-flex {
+    flex: none;
+}
+.flex-1 {
+    flex: 1;
+}
+.flex-5 {
+    flex: 5;
+}
+.inline-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ol {
+    color: #aaa;
+    padding: 0 1.5em;
+}
+ol > li {
+    padding: 0 5px;
+}
+ol > li:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+ol > li > span {
+    color: #555;
+    font-size: 24px;
+    line-height: 1.5em;
+    display: inline-block;
+    width: 100%;
+}
+ol > li > span > small {
+    float: right;
+    font-size: 14px;
+}
 header, footer, main, article, aside, section {
     /*box-shadow: #111 0 0 1px 0 inset;*/
 }
@@ -12,22 +52,34 @@ article {
     flex-direction: column;
     height: 100%;
 }
-header, footer {
+header {
     display: flex;
-    background-color: #e7e7e7;
+    /*background-color: #e7e7e7;*/
     border-bottom: 1px solid #aaa;
-    min-height: 100px;
+    min-height: 50px;
+    /*max-height: 75px;*/
+    padding: 1em 0;
+}
+footer {
+    background-color: #ddd;
+    min-height: 50px;
+    padding: 2px 0;
 }
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 100%;
+    padding: 1em 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 aside {
     flex: 4;
     max-width: 200px;
 }
 section {
+    display: flex;
+    flex-direction: column;
     flex: 8;
     text-align: center;
 }
@@ -36,8 +88,8 @@ section {
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
-    max-width: 70%;
-    min-height: 50px;
+    /*max-width: 70%;*/
+    /*min-height: 50px;*/
     margin: auto;
     font-size: 30px;
 }
@@ -57,6 +109,9 @@ section {
 .search-cnt span {
     flex-direction: end;
 }
+.search-cnt button {
+    flex: none;
+}
 video {
     background-color: #111;
     border: 1px solid #bbb;
@@ -68,18 +123,36 @@ nav {
 }
 nav ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex: 1;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 nav ul > li {
+    display: flex;
     flex: 1;
-    background-color: #eee;
+    /*background-color: #eee;*/
+}
+nav ul > li > div {
+    margin: auto;
 }
 .selected {
     background-color: blue;
+}
+search {
+    /*display: flex;*/
+    /*min-height: 100px;*/
+    /*margin: 3em;*/
+    /*box-shadow: 0px 0px 15px 1px #ededed, inset 0px 0px 0px 1px #ccc;*/
+}
+search:hover {
+    /*box-shadow: inset 0px 0px 0px 1px #eee;*/
+}
+.list-cnt {
+    margin: auto;
+    text-align: left;
+    min-width: 75%;
 }
 /* gradients */
 .grad-red {

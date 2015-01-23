@@ -9,9 +9,22 @@
 <body ng-app="myApp">
 
 <article>
-    
+
 <header class="grad-blue">
-    <div class="search-cnt">
+    <nav>
+        <ul>
+            <li><div>&copy; paco</div></li>
+            <li class="flex-5">
+                <search class="flex-1">
+                    <div class="search-cnt">
+                        <input type="search" placeholder="What do you want say?" />
+                    </div>
+                </search>
+            </li>
+            <li><div>|||</div></li>
+        </ul>
+    </nav>
+    <div class="search-cnt hide">
         <label>Paco</label>
         <input type="text" ng-model="bindme" ng-class="{'grad-red' : $dirty}" />
         <span><i class="fa fa-search fa-2x"></i></span>
@@ -19,22 +32,37 @@
 </header>
 
 <main>
-    <nav>
+    
+    <nav ng-controller="myNav" class="hide">
         <ul>
             <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">video</li>
             <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">details</li>
         </ul>
     </nav>
-    <section>
-        <video></video>
+    
+    <section ng-controller="MyController">
         
-        <div ng-controller="MyController">
-            <p ng-repeat="item in messages">from : {{item.from}} body: {{item.body}}</p>
+        <div class="list-cnt">
+            <!--<label for='nameInput'>Username:</label>
+            <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
+            <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
+            <ol>
+                <li ng-repeat="msg in messages"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
+            </ol>
+            <!--<p ng-repeat="msg in messages">from : {{msg.from}} body: {{msg.body}} <span ng-if="msg.fromX">fromX : {{msg.fromX}}</span></p>-->
         </div>
+
+
     </section>
 </main>
 
-<footer></footer>
+<footer>
+    <nav>
+        <ul>
+            <li><div>b</div></li><li><div>b</div></li><li><div>b</div></li><li><div>b</div></li>
+        </ul>
+    </nav>
+</footer>
 
 </article>
 
