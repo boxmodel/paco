@@ -2,67 +2,76 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles/main.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
     <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
 </head>
 <body ng-app="myApp">
 
-<article>
+<article class="flexbox-column full-height">
 
-<header class="grad-blue">
-    <nav>
-        <ul>
-            <li><div>&copy; paco</div></li>
-            <li class="flex-5">
-                <search class="flex-1">
-                    <div class="search-cnt">
-                        <input type="search" placeholder="What do you want say?" />
-                    </div>
-                </search>
-            </li>
-            <li><div>|||</div></li>
-        </ul>
-    </nav>
-    <div class="search-cnt hide">
-        <label>Paco</label>
-        <input type="text" ng-model="bindme" ng-class="{'grad-red' : $dirty}" />
-        <span><i class="fa fa-search fa-2x"></i></span>
-    </div>
-</header>
-
-<main>
-    
-    <nav ng-controller="myNav" class="hide">
-        <ul>
-            <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">video</li>
-            <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">details</li>
-        </ul>
-    </nav>
-    
-    <section ng-controller="MyController">
-        
-        <div class="list-cnt">
-            <!--<label for='nameInput'>Username:</label>
-            <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
-            <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
-            <ol>
-                <li ng-repeat="msg in messages"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
-            </ol>
-            <!--<p ng-repeat="msg in messages">from : {{msg.from}} body: {{msg.body}} <span ng-if="msg.fromX">fromX : {{msg.fromX}}</span></p>-->
+    <header class="flexbox-column no-flex padding-1 padding-bottom-none">
+        <h1 class="flex-1 title text-center">paco</h1>
+        <nav class="flex-1 margin-auto text-center">
+            <ul class="inline-list">
+                <li>filter by:</li>
+                <li><div><a>most recent</a></div></li>
+                <li><div><a>region</a></div></li>
+                <li><div><a>language</a></div></li>
+                <li><div><a>user</a></div></li>
+                <li><div><a>rating</a></div></li>
+            </ul>
+        </nav>
+        <div class="search-cnt hide">
+            <label>Paco</label>
+            <input type="text" ng-model="bindme" ng-class="{'grad-red' : $dirty}" />
+            <span><i class="fa fa-search fa-2x"></i></span>
         </div>
-
-
-    </section>
-</main>
-
-<footer>
-    <nav>
-        <ul>
-            <li><div>b</div></li><li><div>b</div></li><li><div>b</div></li><li><div>b</div></li>
-        </ul>
-    </nav>
-</footer>
+    </header>
+    
+    <main class="flexbox-column flex-1 flex-center overflow-y">
+    
+            
+        <search class="display-flex no-flex padding-1">
+            <div class="search-cnt">
+                <input ng-model="hasResults" type="search" placeholder="What do you want say?" />
+            </div>
+        </search>
+        
+        
+        <!--<nav ng-controller="myNav" class="hide">
+            <ul>
+                <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">video</li>
+                <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">details</li>
+            </ul>
+        </nav>-->
+        
+        <section ng-if="hasResults" ng-controller="MyController">
+            
+            
+            <div class="list-cnt">
+                <!--<label for='nameInput'>Username:</label>
+                <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
+                <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
+                <ol>
+                    <li ng-repeat="msg in messages"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
+                </ol>
+                <!--<p ng-repeat="msg in messages">from : {{msg.from}} body: {{msg.body}} <span ng-if="msg.fromX">fromX : {{msg.fromX}}</span></p>-->
+            </div>
+    
+    
+        </section>
+    </main>
+    
+    <footer class="no-flex">
+        <h5 class="sub-title text-center margin-auto">Know how to say it now.</h5>
+        <nav class="hide">
+            <ul class="inline-list margin-auto">
+                <li><div>b</div></li><li><div>b</div></li><li><div>b</div></li><li><div>b</div></li>
+            </ul>
+        </nav>
+    </footer>
 
 </article>
 

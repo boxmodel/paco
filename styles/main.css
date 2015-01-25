@@ -1,27 +1,5 @@
-html, body {
-    font-family: sans-serif;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
-/* globals */
-.hide {
-    display: none !important;
-}
-.no-flex {
-    flex: none;
-}
-.flex-1 {
-    flex: 1;
-}
-.flex-5 {
-    flex: 5;
-}
-.inline-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+@import url("globals.css");
+
 ol {
     color: #aaa;
     padding: 0 1.5em;
@@ -44,34 +22,20 @@ ol > li > span > small {
     float: right;
     font-size: 14px;
 }
-header, footer, main, article, aside, section {
-    /*box-shadow: #111 0 0 1px 0 inset;*/
-}
+
 article {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    background: white;
 }
 header {
-    display: flex;
-    /*background-color: #e7e7e7;*/
-    border-bottom: 1px solid #aaa;
-    min-height: 50px;
+    border-bottom: 1px solid #e6e6e6;
+    /*min-height: 50px;*/
     /*max-height: 75px;*/
-    padding: 1em 0;
 }
 footer {
-    background-color: #ddd;
-    min-height: 50px;
-    padding: 2px 0;
+    background-color: whitesmoke;
 }
 main {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1em 0;
-    overflow-y: auto;
-    overflow-x: hidden;
+    background-color: whitesmoke;
 }
 aside {
     flex: 4;
@@ -101,6 +65,8 @@ section {
     outline: none;
     margin: auto 10px;
     font-size: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .search-cnt label {
     padding: 10px;
@@ -117,10 +83,8 @@ video {
     border: 1px solid #bbb;
 }
 nav {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
 }
+/*
 nav ul {
     display: flex;
     flex-direction: row;
@@ -132,19 +96,18 @@ nav ul {
 nav ul > li {
     display: flex;
     flex: 1;
-    /*background-color: #eee;*/
 }
 nav ul > li > div {
     margin: auto;
-}
+}*/
 .selected {
     background-color: blue;
 }
 search {
-    /*display: flex;*/
-    /*min-height: 100px;*/
-    /*margin: 3em;*/
-    /*box-shadow: 0px 0px 15px 1px #ededed, inset 0px 0px 0px 1px #ccc;*/
+    background: white;
+    margin: 2em auto;
+    max-width: 75%;
+    box-shadow: 0px 0px 0px 15px #f9f9f9, inset 0px 0px 0px 1px #e9e9e9;
 }
 search:hover {
     /*box-shadow: inset 0px 0px 0px 1px #eee;*/
