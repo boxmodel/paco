@@ -20,9 +20,8 @@
         <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
         <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
         <ol>
-            <li ng-repeat="msg in messages"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
+            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
         </ol>
-        <!--<p ng-repeat="msg in messages">from : {{msg.from}} body: {{msg.body}} <span ng-if="msg.fromX">fromX : {{msg.fromX}}</span></p>-->
     </div>
 
 

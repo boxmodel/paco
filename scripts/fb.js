@@ -1,4 +1,4 @@
-  var myApp = angular.module("myApp", ["firebase", "ngRoute"]);
+  var myApp = angular.module("myApp", ["firebase", "ngRoute", "ngAnimate"]);
 
   myApp.controller('MyController', ['$scope', '$firebase',
     function($scope, $firebase) {

@@ -113,9 +113,10 @@ search:hover {
     /*box-shadow: inset 0px 0px 0px 1px #eee;*/
 }
 .list-cnt {
-    margin: auto;
+    margin: 0 auto;
     text-align: left;
-    min-width: 75%;
+    width: 75%;
+    max-width: 500px;
 }
 
 .modal {
@@ -130,6 +131,9 @@ search:hover {
 
 .form {
     text-align: center;
+    width: 50%;
+}
+.form .input-submit {
 }
 
 /* gradients */

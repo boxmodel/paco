@@ -110,3 +110,25 @@ a:hover {
     background: red;
     color: white;
 }
+
+/* animation
+***********************/
+.hide-me {
+    opacity: 1;
+}
+.hide-me.ng-enter, .hide-me.ng-leave {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+}
+.hide-me.ng-enter {
+    opacity: 0;
+} 
+.hide-me.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+.hide-me.ng-leave {
+    opacity: 1;
+}
+.hide-me.ng-leave.ng-leave-active {
+    opacity: 0;
+}

@@ -1,3 +1,20 @@
-<div class="form">
-    <h1>hello world!</h1>
+<div class="form margin-auto" ng-controller="MyController">
+    <h2>Share your video</h2>
+    <div>
+        <button>create your video</button>
+    </div>
+    <div class="flexbox-row input-submit">
+        <input placeholder="lesson title" type="text" class="flex-1" />
+        <select class="no-flex">
+            <option>select language</option>
+        </select>
+    </div>
+    <div>
+        <input placeholder="your location" type="text" />
+    </div>
+    <!--
+    <label for='nameInput'>Username:</label>
+    <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
+    <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>
+    -->
 </div>
