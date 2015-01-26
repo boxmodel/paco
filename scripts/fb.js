@@ -1,4 +1,4 @@
-  var myApp = angular.module("myApp", ["firebase"]);
+  var myApp = angular.module("myApp", ["firebase", "ngRoute"]);
 
   myApp.controller('MyController', ['$scope', '$firebase',
     function($scope, $firebase) {
@@ -28,3 +28,47 @@
       }
     }
   ]);
+  
+  myApp.config(function($locationProvider, $routeProvider) {
+    $routeProvider
+    .when('/form', {
+      templateUrl: 'views/form.html', 
+      controller: ''
+    })
+    .when('/home', {
+      redirectTo: '/'
+    })
+    .otherwise({
+        redirectTo: '/',
+        templateUrl: 'index.html' 
+    });
+});
+  
+  myApp.controller('modalController', function($scope) {
+      var showForm;
+    
+      $scope.isClicked = function() {
+        //debugger;
+        
+        if (showForm == !false) {
+          $scope.showForm = false;
+          console.log("cklicked", showForm);
+        } else {
+          $scope.showForm = true;
+        }
+          console.log("cklicked", showForm);
+      
+      }
+    
+      
+  });
+  
+/*myApp.directive('pacoForm', function() {
+  return {
+    restrict: 'AE',
+    templateUrl: 'views/form.html',
+    link: function($scope, element, attrs) {
+      console.log($scope);
+    }
+  };
+});*/
