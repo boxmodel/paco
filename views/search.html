@@ -1,0 +1,29 @@
+<search class="display-flex no-flex padding-1">
+    <div class="search-cnt">
+        <input ng-model="hasResults" type="search" placeholder="What do you want say?" />
+    </div>
+</search>
+
+
+<!--<nav ng-controller="myNav" class="hide">
+    <ul>
+        <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">video</li>
+        <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">details</li>
+    </ul>
+</nav>-->
+
+<section ng-if="hasResults" ng-controller="MyController">
+    
+    
+    <div class="list-cnt">
+        <!--<label for='nameInput'>Username:</label>
+        <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
+        <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
+        <ol>
+            <li ng-repeat="msg in messages"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
+        </ol>
+        <!--<p ng-repeat="msg in messages">from : {{msg.from}} body: {{msg.body}} <span ng-if="msg.fromX">fromX : {{msg.fromX}}</span></p>-->
+    </div>
+
+
+</section>

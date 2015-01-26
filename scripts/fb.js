@@ -35,12 +35,9 @@
       templateUrl: 'views/form.html', 
       controller: ''
     })
-    .when('/home', {
-      redirectTo: '/'
-    })
     .otherwise({
-        redirectTo: '/',
-        templateUrl: 'index.html' 
+      redirectTo: '/',
+      templateUrl: 'views/search.html'
     });
 });
   

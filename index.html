@@ -11,7 +11,7 @@
 </head>
 <body ng-app="myApp">
 
-<article ng-view class="flexbox-column full-height" ng-controller="modalController">
+<article class="flexbox-column full-height" ng-controller="modalController">
 
     <header class="flexbox-column no-flex padding-1 padding-bottom-none">
         <h1 class="flex-1 title text-center"><a href="#/home">paco</a></h1>
@@ -23,7 +23,7 @@
                 <li><div><a>language</a></div></li>
                 <li><div><a>user</a></div></li>
                 <li><div><a>rating</a></div></li>
-                <li><div><a href="#/form" class="button-submit">submit</a>showForm = {{showForm}}</form-open></div></li>
+                <li><div><a href="#/form" class="button-submit">submit</a></form-open></div></li>
             </ul>
         </nav>
         <div class="search-cnt hide">
@@ -33,39 +33,10 @@
         </div>
     </header>
     
-    <main class="flexbox-column flex-1 flex-center overflow-y">
-        showForm = {{showForm}}
-        <div ng-if="showForm" ng-include="'views/modal.html'" class="Xmodal"></div>
+    <main ng-view class="flexbox-column flex-1 flex-center overflow-y">
+
             
-        <search class="display-flex no-flex padding-1">
-            <div class="search-cnt">
-                <input ng-model="hasResults" type="search" placeholder="What do you want say?" />
-            </div>
-        </search>
-        
-        
-        <!--<nav ng-controller="myNav" class="hide">
-            <ul>
-                <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">video</li>
-                <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">details</li>
-            </ul>
-        </nav>-->
-        
-        <section ng-if="hasResults" ng-controller="MyController">
-            
-            
-            <div class="list-cnt">
-                <!--<label for='nameInput'>Username:</label>
-                <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
-                <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
-                <ol>
-                    <li ng-repeat="msg in messages"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
-                </ol>
-                <!--<p ng-repeat="msg in messages">from : {{msg.from}} body: {{msg.body}} <span ng-if="msg.fromX">fromX : {{msg.fromX}}</span></p>-->
-            </div>
-    
-    
-        </section>
+
     </main>
     
     <footer class="no-flex">
@@ -76,6 +47,8 @@
             </ul>
         </nav>
     </footer>
+
+    <div ng-if="showForm" ng-include="'views/modal.html'" class="Xmodal"></div>
 
 </article>
 
