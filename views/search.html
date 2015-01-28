@@ -1,6 +1,7 @@
-<search class="display-flex no-flex padding-1">
+<search class="display-flex no-flex">
     <div class="search-cnt">
         <input ng-model="hasResults" type="search" placeholder="What do you want say?" />
+        <button>X</button>
     </div>
 </search>
 
@@ -12,7 +13,7 @@
     </ul>
 </nav>-->
 
-<section ng-if="hasResults" ng-controller="MyController">
+<section ng-controller="MyController">
     
     
     <div class="list-cnt">
@@ -20,7 +21,9 @@
         <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
         <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
         <ol>
-            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
+<!--            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
+-->
+            <li ng-repeat="item in messages"> <span>{{item.author}} <small ng-if="item.title">from : {{item.title}} </small> </span></li>
         </ol>
     </div>
 

@@ -68,6 +68,15 @@ section {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+.search-cnt button {
+    flex: none;
+    border: none;
+    background: transparent;
+    border-left: 1px solid #ddd;
+    padding: 0 20px;
+    font-size: 2em;
+    color: #aaa;
+}
 .search-cnt label {
     padding: 10px;
     margin: auto;
