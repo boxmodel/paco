@@ -3,11 +3,19 @@
         <li>filter by :</li>
         <li><div><a>recent</a></div></li>
         <li><div><a>region</a></div></li>
-        <li><div><a>language</a></div></li>
+        <li><div><a ng-click="pulldown = !pulldown" ng-class="{'text-color-blue': pulldown}">language</a></div></li>
         <li><div><a>user</a></div></li>
         <li><div><a>rating</a></div></li>
         <li><div><a href="#/form">submit</a></form-open></div></li>
     </ul>
+    <div ng-if="pulldown" class="pull-down">
+        <h3 class="text-color-white">choose your language</h3>
+        <ul class="inline-list">
+            <li class="padding-1"><a href="#/english" class="text-color-white">english</a></li>
+            <li class="padding-1"><a href="#/spanish" class="text-color-white">spanish</a></li>
+            <li class="padding-1"><a href="#/indonesia" class="text-color-white">indonesia</a></li>
+        </ul>
+    </div>
 </nav>
 <search class="display-flex no-flex">
     <div class="search-cnt">
@@ -34,7 +42,11 @@
         <ol>
 <!--            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
 -->
-            <li ng-repeat="item in messages" my-modal> <span>{{item.author}} <small ng-if="item.title">from : {{item.title}} </small> </span></li>
+            <li ng-repeat="item in messages">
+                <span ng-if="item.author">author : {{item.author}} </span>
+                <span ng-if="item.title">title : {{item.title}} </span>
+                <span ng-if="item.language">language : {{item.language}}</span>
+            </li>
         </ol>
     </div>
 

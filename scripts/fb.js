@@ -38,6 +38,18 @@
       templateUrl: 'views/form.html', 
       controller: ''
     })
+    .when('/english', {
+      templateUrl: 'views/english.html', 
+      controller: ''
+    })
+    .when('/spanish', {
+      templateUrl: 'views/spanish.html', 
+      controller: ''
+    })
+    .when('/indonesia', {
+      templateUrl: 'views/indonesia.html', 
+      controller: ''
+    })
     .otherwise({
       redirectTo: '/',
       templateUrl: 'views/search.html'
@@ -92,7 +104,8 @@ $scope.submitForm = function(user) {
   
   postsRef.push({
     author: user.name,
-    title: user.msg
+    title: user.msg,
+    language: user.language
   });
   
   $scope.reset();

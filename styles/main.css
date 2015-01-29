@@ -105,6 +105,7 @@ video {
 }
 nav {
     width: 75%;
+    position: relative;
 }
 
 nav ul {
@@ -142,14 +143,30 @@ nav ul > li {
 }
 
 .add-new-form {
-    width: 75%;
+    /*width: 75%;*/
+}
+.add-new-form .group {
+    display: flex;
+    flex-direction: column;
+}
+.add-new-form .group > label,
+.add-new-form .group > input,
+.add-new-form .group > select {
+    flex: 1;
+    margin: 5px 5px 5px 0;
 }
 .add-new-form .row {
     display: flex;
+    flex-direction: row;
 }
-.add-new-form .row > label,
-.add-new-form .row > input {
-    flex: 1;
+
+.pull-down {
+    position: absolute;
+    top: 100%;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(36, 46, 71, 0.75);
+    padding: 10px;
 }
 
 /* gradients */

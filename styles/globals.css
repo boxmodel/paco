@@ -11,6 +11,8 @@ h1,h2,h3,h4,h5 {padding:0;margin:0;}
 a {
     text-decoration: underline;
     color: inherit;
+    cursor: pointer;
+    outline: none;
 }
 a:hover {
     text-decoration: none;
@@ -42,6 +44,15 @@ a:hover {
     /*margin: 1em auto;*/
     /*padding: 1em;*/
     /*flex: none;*/
+}
+
+/* color
+***************/
+.text-color-white {
+    color: #fff;
+}
+.text-color-blue {
+    color: rgb(36, 46, 71);
 }
 
 /* flexbox
@@ -146,4 +157,14 @@ a:hover {
 }
 .hide-me.ng-leave.ng-leave-active {
     opacity: 0;
+}
+
+/* form
+*********************/
+input,
+select {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
 }
