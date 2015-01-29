@@ -2,15 +2,17 @@
     <h2>Share your video</h2>
     
     <div ng-controller="myForm">
-        <form novalidate>
+        <form novalidate class="add-new-form">
             
-            <label for='nameInput'>Username:</label>
+            <div class="row">
+                <label for='nameInput'>Username:</label>
                 <input ng-model='user.name' type='text' placeholder='enter a username...'>
-                
-            <label for='messageInput'>Message:</label>
+            </div>
+            <div class="row">
+                <label for='messageInput'>Message:</label>
                 <input ng-model='user.msg' type='text' placeholder='Type a message...'>
-                
-            <div>
+            </div>
+            <div class="row">
                 <input type="submit" ng-click="submitForm(user)" value="Save" />
                 <input type="button" ng-click="reset(user)" value="Reset" />
             </div>
