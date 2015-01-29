@@ -102,7 +102,14 @@ $scope.submitForm = function(user) {
 $scope.reset = function(user) {
   //alert("my form");
   $scope.user = '';
-}
+};
+
+myApp.directive('my-modal', function() {
+  console.log("opening");
+  return {
+    templateUrl: 'views/modal.html'
+  };
+});
 //UPDATE OBJCT
 // var hopperRef = usersRef.child("gracehop");
 // hopperRef.update({

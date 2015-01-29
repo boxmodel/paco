@@ -25,10 +25,12 @@ a:hover {
     color: #aaa;
 }
 .title small {
+    color: #999;
     text-shadow: none;
     font-size: .5em;
     text-transform: lowercase;
     font-family: sans-serif;
+    font-weight: normal;
     margin-left: 10px;
 }
 .sub-title {
@@ -68,6 +70,9 @@ a:hover {
 }
 .flex-center {
     justify-content: center;
+}
+.flex-column-reverse {
+    flex-direction: column-reverse;
 }
 
 .margin-auto {

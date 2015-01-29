@@ -1,7 +1,18 @@
+<nav class="flex-1 margin-auto text-center">
+    <ul class="inline-list">
+        <li>filter by :</li>
+        <li><div><a>recent</a></div></li>
+        <li><div><a>region</a></div></li>
+        <li><div><a>language</a></div></li>
+        <li><div><a>user</a></div></li>
+        <li><div><a>rating</a></div></li>
+        <li><div><a href="#/form">submit</a></form-open></div></li>
+    </ul>
+</nav>
 <search class="display-flex no-flex">
     <div class="search-cnt">
         <input ng-model="hasResults" type="search" placeholder="What do you want say?" />
-        <button>X</button>
+        <i class="fa fa-search"></i>
     </div>
 </search>
 
@@ -23,7 +34,7 @@
         <ol>
 <!--            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
 -->
-            <li ng-repeat="item in messages"> <span>{{item.author}} <small ng-if="item.title">from : {{item.title}} </small> </span></li>
+            <li ng-repeat="item in messages" my-modal> <span>{{item.author}} <small ng-if="item.title">from : {{item.title}} </small> </span></li>
         </ol>
     </div>
 
