@@ -1,9 +1,9 @@
   var myApp = angular.module("myApp", ["firebase", "ngRoute", "ngAnimate"]);
+  var ref = new Firebase("https://aestheticdrift.firebaseio.com/web/saving-data/fireblog/posts");
 
   myApp.controller('MyController', ['$scope', '$firebase',
     function($scope, $firebase) {
       //CREATE A FIREBASE REFERENCE
-      var ref = new Firebase("https://aestheticdrift.firebaseio.com/web/saving-data/fireblog/posts");
 
       // GET MESSAGES AS AN ARRAY
       $scope.messages = $firebase(ref).$asArray();
@@ -26,14 +26,23 @@
           $scope.msg = "";
         }
       }
-      
-      console.log($scope.messages);
-      
+    
+      $scope.findscope = function() {
+        var x = this;
+        //alert("my form");
+        //$scope.user = '';
+        console.log(x.item);
+      };
+
     }
   ]);
   
   myApp.config(function($locationProvider, $routeProvider) {
     $routeProvider
+    .when('/home', {
+      templateUrl: 'views/search.html', 
+      controller: ''
+    })
     .when('/form', {
       templateUrl: 'views/form.html', 
       controller: ''
@@ -75,6 +84,9 @@ myApp.controller('modalController', function($scope) {
     
 });
 
+//indController
+
+
 myApp.controller('myForm', ['$scope', '$firebase',
 function($scope, $firebase) {
 
@@ -98,7 +110,7 @@ usersRef.set({
 
 
 $scope.submitForm = function(user) {
-  console.log("user", user);
+  //console.log("user", user);
   
   var postsRef = ref.child("posts");
   
@@ -123,6 +135,9 @@ myApp.directive('my-modal', function() {
     templateUrl: 'views/modal.html'
   };
 });
+
+
+
 //UPDATE OBJCT
 // var hopperRef = usersRef.child("gracehop");
 // hopperRef.update({

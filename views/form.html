@@ -1,5 +1,6 @@
-<div class="form-view" ng-controller="MyController">
-    <h2>Share your video</h2>
+<div class="form-view margin-auto half-width" ng-controller="MyController">
+    <h2>Sumbit a lesson</h2>
+    <p class="tip">Create and upload your video lesson.</p>
     
     <div ng-controller="myForm">
         <form novalidate class="add-new-form">
@@ -7,11 +8,15 @@
             <div class="row">
                 <div class="group">
                     <label for='nameInput'>Username:</label>
-                    <input ng-model='user.name' type='text' placeholder='enter a username...'>
+                    <input ng-model='user.name' type='text' placeholder='enter a username'>
                 </div>
                 <div class="group">
-                    <label for='messageInput'>Message:</label>
-                    <input ng-model='user.msg' type='text' placeholder='Type a message...'>
+                    <label for='messageInput'>Lesson:</label>
+                    <textarea ng-model='user.msg' type='text' placeholder='enter lesson' rows="10"></textarea>
+                </div>
+                <div class="group">
+                    <label for='videoInput'>Video:</label>
+                    <input ng-model='user.video' type='text' placeholder='video filename'>
                 </div>
                 <div class="group">
                     <label>Language</label>
@@ -23,8 +28,10 @@
                 </div>
             </div>
             <div class="row">
-                <input type="submit" ng-click="submitForm(user)" value="Save" />
-                <input type="button" ng-click="reset(user)" value="Reset" />
+                <div class="group flexbox-column">
+                    <input type="submit" ng-click="submitForm(user)" value="Save" />
+                    <input type="button" ng-click="reset(user)" value="Reset" class="no-border" />
+                </div>
             </div>
             
             <!--<div>

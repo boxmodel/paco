@@ -11,16 +11,17 @@ ol > li:hover {
     background-color: #f9f9f9;
     cursor: pointer;
 }
-ol > li > span {
-    color: #555;
-    font-size: 24px;
-    line-height: 1.5em;
-    display: inline-block;
-    width: 100%;
+ol > li > h3 {
+    color: #333;
+}
+ol > li > span,
+ol > li > ul > li {
+    color: #aaa;
+    font-size: 14px;
 }
 ol > li > span > small {
     float: right;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 article {
@@ -36,58 +37,67 @@ footer {
     background-color: whitesmoke;
 }
 main {
-    background-color: whitesmoke;
+    padding: 1em 0;
+    /*background-color: whitesmoke;*/
 }
 aside {
+    box-sizing: border-box;
     flex: 4;
-    max-width: 200px;
+    /*width: 30%;*/
 }
 section {
     display: flex;
     flex-direction: column;
-    flex: 8;
-    text-align: center;
-}
-
-search {
-    background: white;
+    flex: 10;
+    /*text-align: center;*/
+    box-sizing: border-box;
+    max-width: 75%;
     margin: auto;
-    width: 100%;
+}
+search {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    padding: 5px;
     /*box-shadow: 0px 0px 0px 15px #f9f9f9, inset 0px 0px 0px 1px #e9e9e9;*/
 }
 search:hover {
     /*box-shadow: inset 0px 0px 0px 1px #eee;*/
 }
 .search-cnt {
-    flex: 1 1 auto;
+    /*flex: 1 1 auto;*/
     text-align: center;
     /*max-width: 70%;*/
     /*min-height: 50px;*/
     color: #aaa;
-    margin: auto;
+    /*margin: auto;
     font-size: 30px;
-    max-width: 75%;
+    max-width: 75%;*/
 }
 .search-cnt input {
     background-color: transparent;
     border: none;
+    color: #aaa;
+    font-weight: normal;
     /*border-width: 0 0 2px 0;*/
     flex: 1;
     outline: none;
-    margin: auto 10px;
-    font-size: 30px;
+    font-size: 1em;
     text-overflow: ellipsis;
     overflow: hidden;
-    padding: 20px;
-    text-align: center;
+    /*padding: 20px;
+    text-align: center;*/
+}
+.search-cnt .ng-dirty {
+    color: #fff;
+    font-weight: bold;
 }
 .search-cnt button {
     flex: none;
     border: none;
     background: transparent;
     /*border: 1px solid #ddd;*/
-    padding: 0 20px;
-    font-size: 2em;
+    /*padding: 0 20px;
+    font-size: 2em;*/
 }
 .search-cnt label {
     padding: 10px;
@@ -99,15 +109,23 @@ search:hover {
 .search-cnt button {
     flex: none;
 }
+.search-cnt i {
+    margin: auto 5px;
+}
 video {
     background-color: #111;
     border: 1px solid #bbb;
 }
-nav {
-    width: 75%;
-    position: relative;
-}
 
+/*navigation
+**************************/
+nav {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ededed;
+    position: relative;
+    height: 50px;
+    transition: all .5s;
+}
 nav ul {
     /*display: flex;*/
     /*flex-direction: row;*/
@@ -115,12 +133,29 @@ nav ul {
 }
 nav ul > li {
     /*flex: 1;*/
-    color: #aaa;
+    color: #474747;
     margin: auto;
 }
 /*nav ul > li > div {
     margin: auto;
 }*/
+.pull-down {
+    /*position: absolute;*/
+    /*top: 100%;*/
+    /*z-index: 2;*/
+    width: 100%;
+    background-color: rgba(36, 46, 71, 0.75);
+    height: 0;
+    transition: all .5s;
+    overflow: hidden;
+}
+.pull-down.item-expand {
+    opacity: 1;
+    height: 100px;
+}
+nav.item-expand {
+    height: 150px;
+}
 .selected {
     background-color: blue;
 }
@@ -147,26 +182,19 @@ nav ul > li {
 }
 .add-new-form .group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .add-new-form .group > label,
 .add-new-form .group > input,
-.add-new-form .group > select {
+.add-new-form .group > select,
+.add-new-form .group > textarea {
     flex: 1;
-    margin: 5px 5px 5px 0;
+    margin: 5px 5px 15px 0;
 }
 .add-new-form .row {
     display: flex;
-    flex-direction: row;
-}
-
-.pull-down {
-    position: absolute;
-    top: 100%;
-    z-index: 2;
-    width: 100%;
-    background-color: rgba(36, 46, 71, 0.75);
-    padding: 10px;
+    flex-direction: column;
+    margin: 1em 0;
 }
 
 /* gradients */
@@ -181,4 +209,14 @@ nav ul > li {
 }
 .grad-transparent {
     background: -webkit-linear-gradient(top, rgba(252,255,244,0) 0%,rgba(221,221,221,1) 100%);
+}
+
+.tip {
+    width: 100%;
+    margin: 1em auto;
+    border-left: 3px solid #e1e1e1;
+    padding: .5em;
+    background: #fafafa;
+    font-size: 12px;
+    color: #555;
 }
