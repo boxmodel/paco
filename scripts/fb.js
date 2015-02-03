@@ -53,11 +53,11 @@
     })
     .when('/spanish', {
       templateUrl: 'views/spanish.html', 
-      controller: ''
+      controller: 'spanishController'
     })
     .when('/indonesia', {
       templateUrl: 'views/indonesia.html', 
-      controller: ''
+      controller: 'indonesiaController'
     })
     .otherwise({
       redirectTo: '/',
@@ -84,15 +84,41 @@ myApp.controller('modalController', function($scope) {
     
 });
 
-//indController
+// language controllers
+myApp.controller('englishController', function($scope) {
+  $scope.titleMessage = "English";
+});
+
+myApp.controller('indonesiaController', function($scope) {
+  $scope.titleMessage = "Indonesia";
+});
+
+myApp.controller('spanishController', function($scope) {
+  $scope.titleMessage = "Spanish";
+});
+
+
+myApp.controller('navController', ['$scope', '$firebase',
+  function($scope) {
+
+    var isSelected;
+    
+    $scope.languages = ['english', 'spanish', 'indonesia'];
+    $scope.$parent.pulldown = isSelected;
+    
+  }
+]);
+
+
+
 
 
 myApp.controller('myForm', ['$scope', '$firebase',
 function($scope, $firebase) {
 
-$scope.master = {};
+  $scope.master = {};
 
-var ref = new Firebase("https://aestheticdrift.firebaseio.com/web/saving-data/fireblog");
+  var ref = new Firebase("https://aestheticdrift.firebaseio.com/web/saving-data/fireblog");
 // set() with unique id
 
 /*var usersRef = ref.child("users");
@@ -109,34 +135,25 @@ usersRef.set({
 
 
 
-$scope.submitForm = function(user) {
-  //console.log("user", user);
-  
-  var postsRef = ref.child("posts");
-  
-  postsRef.push({
-    author: user.name,
-    title: user.msg,
-    language: user.language
-  });
-  
-  $scope.reset();
-  // $scope.master = angular.copy(user);
-};
-      
-$scope.reset = function(user) {
-  //alert("my form");
-  $scope.user = '';
-};
-
-myApp.directive('my-modal', function() {
-  console.log("opening");
-  return {
-    templateUrl: 'views/modal.html'
+  $scope.submitForm = function(user) {
+    //console.log("user", user);
+    
+    var postsRef = ref.child("posts");
+    
+    postsRef.push({
+      author: user.name,
+      title: user.msg,
+      language: user.language
+    });
+    
+    $scope.reset();
+    // $scope.master = angular.copy(user);
   };
-});
-
-
+      
+  $scope.reset = function(user) {
+    //alert("my form");
+    $scope.user = '';
+  };
 
 //UPDATE OBJCT
 // var hopperRef = usersRef.child("gracehop");

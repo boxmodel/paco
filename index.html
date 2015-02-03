@@ -13,7 +13,7 @@
 </head>
 <body ng-app="myApp">
 
-<article class="flexbox-column full-height" ng-controller="modalController">
+<article class="flexbox-column full-height">
 
     <header class="flexbox-row no-flex padding-1">
         <h1 class="flex-1 flex-start title"><a href="#/home">delucia</a><small class="hide">Know how to say it now.</small></h1>
@@ -31,7 +31,7 @@
         </div>-->
     </header>
     
-    <nav class="text-center" ng-class="{'item-expand' : pulldown}">
+    <nav class="text-center" ng-class="{'item-expand' : pulldown}" ng-controller="navController">
         <ul class="inline-list">
             <li>filter by :</li>
             <li><div><a>recent</a></div></li>
@@ -45,10 +45,11 @@
             <div class="padding-1">
                 <h3 class="text-color-white">choose your language</h3>
                 <ul class="inline-list">
-                    <li class="padding-1"><a href="#/english" ng-click="pulldown = !pulldown" class="text-color-white">english</a></li>
-                    <li class="padding-1"><a href="#/spanish" ng-click="pulldown = !pulldown" class="text-color-white">spanish</a></li>
+                    <li ng-if="item" ng-repeat="item in languages" class="padding-1">
+                        <a href="#/{{item}}" ng-click="$parent.$parent.pulldown = !$parent.$parent.pulldown" class="text-color-white">{{item}}</a></li>
+<!--                    <li class="padding-1"><a href="#/spanish" ng-click="pulldown = !pulldown" class="text-color-white">spanish</a></li>
                     <li class="padding-1"><a href="#/indonesia" ng-click="pulldown = !pulldown" class="text-color-white">indonesia</a></li>
-                </ul>
+-->                </ul>
             </div>
         </div>
     </nav>
