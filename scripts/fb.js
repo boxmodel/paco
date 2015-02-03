@@ -98,13 +98,24 @@ myApp.controller('spanishController', function($scope) {
 });
 
 
-myApp.controller('navController', ['$scope', '$firebase',
+myApp.controller('navController', ['$scope',
   function($scope) {
+    
+    var isClicked;
+    
+    $scope.pulldown = function() {
 
-    var isSelected;
+      if (isClicked == !false) {
+        isClicked = false;
+        $scope.isClicked = false;
+      } else {
+        isClicked = true;
+        $scope.isClicked = true;
+      }
+
+    };
     
     $scope.languages = ['english', 'spanish', 'indonesia'];
-    $scope.$parent.pulldown = isSelected;
     
   }
 ]);

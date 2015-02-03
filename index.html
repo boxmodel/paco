@@ -24,32 +24,26 @@
             </div>
         </search>
         <div class="flex-1">&nbsp;</div>
-        <!--<div class="search-cnt">
-            <label>Paco</label>
-            <input type="text" ng-model="bindme" ng-class="{'grad-red' : $dirty}" />
-            <span><i class="fa fa-search fa-2x"></i></span>
-        </div>-->
     </header>
     
-    <nav class="text-center" ng-class="{'item-expand' : pulldown}" ng-controller="navController">
+    <nav class="text-center" ng-class="{'item-expand' : isClicked}" ng-controller="navController">
         <ul class="inline-list">
             <li>filter by :</li>
             <li><div><a>recent</a></div></li>
             <li><div><a>region</a></div></li>
-            <li><div><a ng-click="pulldown = !pulldown" ng-class="{'text-color-blue': pulldown}">language</a></div></li>
+            <li><div><a ng-click="pulldown()" ng-class="{'text-color-blue': isClicked}">language</a></div></li>
             <li><div><a>user</a></div></li>
             <li><div><a>rating</a></div></li>
             <li><div><a href="#/form">submit</a></form-open></div></li>
         </ul>
-        <div ng-show="pulldown" ng-class="{'item-expand' : pulldown}" class="pull-down">
+        <div ng-show="isClicked" ng-class="{'item-expand' : isClicked}" class="pull-down">
             <div class="padding-1">
                 <h3 class="text-color-white">choose your language</h3>
                 <ul class="inline-list">
                     <li ng-if="item" ng-repeat="item in languages" class="padding-1">
-                        <a href="#/{{item}}" ng-click="$parent.$parent.pulldown = !$parent.$parent.pulldown" class="text-color-white">{{item}}</a></li>
-<!--                    <li class="padding-1"><a href="#/spanish" ng-click="pulldown = !pulldown" class="text-color-white">spanish</a></li>
-                    <li class="padding-1"><a href="#/indonesia" ng-click="pulldown = !pulldown" class="text-color-white">indonesia</a></li>
--->                </ul>
+                        <a href="#/{{item}}" ng-click="pulldown()" class="text-color-white">{{item}}</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
