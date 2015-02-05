@@ -33,6 +33,8 @@
         //$scope.user = '';
         console.log(x.item);
       };
+      
+      $scope.languages = ['english', 'spanish', 'indonesia'];
 
     }
   ]);
@@ -47,15 +49,15 @@
       templateUrl: 'views/form.html', 
       controller: ''
     })
-    .when('/english', {
+    .when('/english/:itemTitle', {
       templateUrl: 'views/english.html', 
-      controller: ''
+      controller: 'englishController'
     })
-    .when('/spanish', {
+    .when('/spanish/:itemTitle', {
       templateUrl: 'views/spanish.html', 
       controller: 'spanishController'
     })
-    .when('/indonesia', {
+    .when('/indonesia/:itemTitle', {
       templateUrl: 'views/indonesia.html', 
       controller: 'indonesiaController'
     })
@@ -85,23 +87,26 @@ myApp.controller('modalController', function($scope) {
 });
 
 // language controllers
-myApp.controller('englishController', function($scope) {
+myApp.controller('englishController', function($scope, $routeParams) {
   $scope.titleMessage = "English";
+  $scope.item = $routeParams.itemTitle;
 });
 
-myApp.controller('indonesiaController', function($scope) {
+myApp.controller('indonesiaController', function($scope, $routeParams) {
   $scope.titleMessage = "Indonesia";
+  $scope.item = $routeParams.itemTitle;
 });
 
-myApp.controller('spanishController', function($scope) {
+myApp.controller('spanishController', function($scope, $routeParams) {
   $scope.titleMessage = "Spanish";
+  $scope.item = $routeParams.itemTitle;
 });
 
 
-myApp.controller('navController', ['$scope',
+myApp.controller('navController',
   function($scope) {
     
-    var isClicked;
+    var isClicked = false;
     
     $scope.pulldown = function() {
 
@@ -115,10 +120,9 @@ myApp.controller('navController', ['$scope',
 
     };
     
-    $scope.languages = ['english', 'spanish', 'indonesia'];
+    $scope.languages = ['english', 'spanish', 'INDONESIA'];
     
-  }
-]);
+  });
 
 
 

@@ -16,7 +16,7 @@
 <!--            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
 -->
             <li ng-repeat="item in messages" ng-click="findscope()">
-                <h3 ng-if="item.title">{{item.title}}</h3>
+                <a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>
                 <ul class="inline-list pipes">
                     <li ng-if="item.language">{{item.language}}</li>
                     <li ng-if="item.author">{{item.author}} </li>

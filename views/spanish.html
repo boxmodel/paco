@@ -1,21 +1,4 @@
 <section ng-controller="spanishController">
-<h2 ng-bind="titleMessage"></h2>
-    
-    
-    <div class="list-cnt">
-        <!--<label for='nameInput'>Username:</label>
-        <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
-        <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
-        <ol>
-<!--            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
--->
-            <li ng-repeat="item in language">
-                <span ng-if="item.author">author : {{item.author}} </span>
-                <span ng-if="item.title">title : {{item.title}} </span>
-                <span ng-if="item.language">language : {{item.language}}</span>
-            </li>
-        </ol>
-    </div>
-
-
+    <h2 ng-bind="titleMessage"></h2>
+    <p ng-bind="item"></p>
 </section>
