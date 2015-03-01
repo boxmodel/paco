@@ -1,45 +1,30 @@
-<!--<nav ng-controller="myNav" class="hide">
-    <ul>
-        <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">video</li>
-        <li ng-click="this.isSelected = !this.isSelected" ng-class="{'selected' : this.isSelected}">details</li>
-    </ul>
-</nav>-->
-
-<section ng-controller="MyController">
-    
-    
-    <div class="list-cnt">
-        <!--<label for='nameInput'>Username:</label>
-        <input ng-model='name' type='text' id='nameInput' placeholder='enter a username...'>
-        <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
-        <ol>
-<!--            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
--->
-            <li ng-repeat="item in messages" ng-click="findscope()">
-                <a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>
-                <ul class="inline-list pipes">
-                    <li ng-if="item.language">{{item.language}}</li>
-                    <li ng-if="item.author">{{item.author}} </li>
-                </ul>
-            </li>
-        </ol>
+<section class="col-12">
+    <div ng-repeat="language in languages" class="row">
+        <div class="col-2">
+            <nav class="side-menu">
+                <h3>{{language}}</h3>
+            </nav>
+        </div>
+        <div class="col-10 list-cnt">
+            <ol class="video-list border-left">
+                <li ng-repeat="item in messages" ng-click="findscope()">
+                    <div class="video-thumb">
+                        <div class="video-title">
+                            <!--<a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>-->
+                            <a ng-click="openModal()">{{item.title}}</a>
+                        </div>
+                        <div class="video-details">
+                            <b>{{item.date | date:'medium'}}</b>
+                            <i>{{item.date}}</i>
+                            <ul class="inline-list pipes">
+                                <li ng-if="item.language">{{item.language}}</li>
+                                <li ng-if="item.author">{{item.author}} </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
     </div>
-
-
+    
 </section>
-
-<aside ng-controller="MyController">
-    <div style="border-left: 1px solid;">
-        <ol class="ordered-list">
-<!--            <li ng-repeat="msg in messages | filter: hasResults as results" class="hide-me"> <span>{{msg.body}} <small ng-if="msg.from">from : {{msg.from}} </small> </span></li>
--->
-            <li ng-repeat="item in messages" ng-click="findscope()">
-                <h3 ng-if="item.title">{{item.title}}</h3>
-                <ul class="inline-list pipes">
-                    <li ng-if="item.language">{{item.language}}</li>
-                    <li ng-if="item.author">{{item.author}} </li>
-                </ul>
-            </li>
-        </ol>
-    </div>
-</aside>

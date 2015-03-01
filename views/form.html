@@ -1,9 +1,10 @@
-<div class="form-view margin-auto half-width" ng-controller="MyController">
+<div class="form-view margin-auto half-width">
     <h2>Sumbit a lesson</h2>
     <p class="tip">Create and upload your video lesson.</p>
     
     <div ng-controller="myForm">
-        <form novalidate class="add-new-form">
+        <form class="add-new-form">
+            
             
             <div class="row">
                 <div class="group">
@@ -12,7 +13,7 @@
                 </div>
                 <div class="group">
                     <label for='messageInput'>Lesson:</label>
-                    <textarea ng-model='user.msg' type='text' placeholder='enter lesson' rows="10"></textarea>
+                    <textarea ng-model='user.title' type='text' placeholder='enter lesson' rows="10"></textarea>
                 </div>
                 <div class="group">
                     <label for='videoInput'>Video:</label>

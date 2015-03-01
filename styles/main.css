@@ -2,7 +2,7 @@
 
 ol {
     color: #aaa;
-    padding: 0 1.5em;
+    /*padding: 0 1.5em;*/
 }
 ol > li {
     padding: 0 5px;
@@ -46,12 +46,12 @@ aside {
     /*width: 30%;*/
 }
 section {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    flex: 10;
+    flex: 10;*/
     /*text-align: center;*/
     box-sizing: border-box;
-    max-width: 75%;
+    /*max-width: 75%;*/
     margin: auto;
 }
 search {
@@ -120,11 +120,6 @@ video {
 /*navigation
 **************************/
 nav {
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #ededed;
-    position: relative;
-    height: 50px;
-    transition: all .5s;
 }
 nav ul {
     /*display: flex;*/
@@ -139,6 +134,24 @@ nav ul > li {
 /*nav ul > li > div {
     margin: auto;
 }*/
+.nav-bar {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ededed;
+    position: relative;
+    transition: all .5s;
+    height: 50px;
+}
+.side-menu ul li {
+    border: 1px solid #111;
+    border-bottom: none;
+}
+.side-menu ul li:first-child {
+    border-radius: 3px 3px 0 0;
+}
+.side-menu ul li:last-child {
+    border-bottom: 1px solid #111;
+    border-radius: 0 0 3px 3px;
+}
 .pull-down {
     /*position: absolute;*/
     /*top: 100%;*/
@@ -160,14 +173,49 @@ nav.item-expand {
     background-color: blue;
 }
 
-.list-cnt {
-    margin: 0 auto;
-    text-align: left;
-    width: 75%;
-    max-width: 500px;
+/*CONTENT LIST
+*********************/
+.video-list li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+.video-list li .video-thumb {
+    display: inline-flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 120px;
+    min-height: 100px;
+    background: #333;
+    color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    margin: 1px;
+}
+.video-list li .video-thumb .video-title {
+    display: flex;
+    flex-direction:column;
+    flex: 1;
+    color: #ddd;
+    margin: auto;
+}
+.video-list li .video-thumb .video-title a {
+    margin: auto;
+}
+.video-list li .video-thumb .video-details {
+    flex: none;
+    color: #888;
+    font-size: 11px;
+    padding: 5px;
+}
+.video-list.border-left {
+    border-left: 2px solid #ddd;
+    padding-left: 1px;
 }
 
-.modal {
+/*MODAL
+*********************/
+.modal-mask {
     position: absolute;
     z-index: 2;
     width: 100%;
@@ -176,7 +224,33 @@ nav.item-expand {
     left: 0;
     background: rgba(0, 0, 0, 0.5);
 }
+.modal {
+    min-height: 300px;
+    min-width: 500px;
+    background: #fff;
+    box-shadow: 0 0 50px 0 #000;
+    position: relative;
+}
+.modal .close {
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -30px;
+    top: 0px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    line-height: 30px;
+}
+.modal .close:hover {
+    background: #fff;
+    color: #ddd;
+}
 
+/*FORM
+*****************/
 .add-new-form {
     /*width: 75%;*/
 }

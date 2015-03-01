@@ -1,4 +1,15 @@
-<section ng-controller="englishController">
-    <h2 ng-bind="titleMessage"></h2>
-    <p ng-bind="item"></p>
+<section>
+    <h2 ng-if="item">{{item}}</h2>
+    <h3 ng-bind="titleMessage"></h3>
+        <ol>
+            <li ng-repeat="item in messages" ng-click="findscope()">
+                <a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>
+                <b>{{item.date | date:'medium'}}</b>
+                <i>{{item.date}}</i>
+                <ul class="inline-list pipes">
+                    <li ng-if="item.language">{{item.language}}</li>
+                    <li ng-if="item.author">{{item.author}} </li>
+                </ul>
+            </li>
+        </ol>
 </section>

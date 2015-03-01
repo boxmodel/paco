@@ -6,7 +6,22 @@ html, body {
     padding: 0;
     margin: 0;
 }
-h1,h2,h3,h4,h5 {padding:0;margin:0;}
+h1,h2,h3,h4,h5 {
+    padding:0;
+    margin:0;}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.75em;
+    font-weight: normal;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 1em;
+}
+h3 {
+    font-size: 1.25em;
+    font-weight: normal;
+}
 ol, ul {
     list-style-type: none;
     padding: 0;
@@ -25,7 +40,9 @@ input,
 button,
 textarea,
 select,
-option {
+option,
+checkbox,
+radio {
     outline: none;
 }
 .clear:before,
@@ -180,7 +197,7 @@ option {
 .pipes li:after {
     content: '|';
     margin: 5px;
-    color: #ebebeb;
+    color: inherit;
     font-weight: normal;
 }
 .pipes li:last-child:after {
@@ -223,7 +240,9 @@ option {
 *********************/
 input,
 select,
-textarea {
+textarea,
+input[type=checkbox],
+input[type=radio] {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -234,4 +253,55 @@ textarea {
 **********************/
 .no-border {
     border: none;
+}
+
+/*GRID
+**********************/
+.row:after {
+    content: '.';
+    float: none;
+    display: table;
+    text-indent: -9999em;
+    overflow: hidden;
+}
+.col-1 {
+    float: left;
+    box-sizing: content-box;
+    width: 78.333px;
+}
+.col-2 {
+    float: left;
+    box-sizing: content-box;
+    width: 156.666px;
+}
+.col-4 {
+    float: left;
+    box-sizing: content-box;
+    width: 313.333px;
+}
+.col-6 {
+    float: left;
+    box-sizing: content-box;
+    width: 470px;
+}
+.col-8 {
+    float: left;
+    box-sizing: content-box;
+    width: 626.666px;
+}
+.col-10 {
+    float: left;
+    box-sizing: content-box;
+    width: 783.333px;
+}
+.col-12 {
+    float: left;
+    box-sizing: content-box;
+    width: 940px;
+}
+
+/*MICS
+*****************/
+.cursor {
+    cursor: pointer;
 }

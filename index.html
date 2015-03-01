@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Know how to say it now.</title>
+    <title>delucia</title>
     <link rel="stylesheet" href="styles/main.css" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -11,62 +11,55 @@
     <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="MyController">
+<div ng-modal ng-if="isOpen"></div>
 
 <article class="flexbox-column full-height">
 
     <header class="flexbox-row no-flex padding-1">
-        <h1 class="flex-1 flex-start title"><a href="#/home">delucia</a><small class="hide">Know how to say it now.</small></h1>
+        <h1 class="flex-1 flex-start title"><a href="#/">delucia</a></h1>
         <search class="flex-1 margin-auto">
             <div class="flexbox-row search-cnt">
-                <input class="text-center text-color-white" ng-model="hasResults" type="search" placeholder="What do you want say?" />
+                <input class="text-center text-color-white" ng-model="hasResults" type="search" placeholder="search" />
                 <i class="fa fa-search"></i>
             </div>
         </search>
         <div class="flex-1">&nbsp;</div>
     </header>
     
-    <nav class="text-center" ng-class="{'item-expand' : isClicked}" ng-controller="navController">
-        <ul class="inline-list">
-            <li>filter by :</li>
-            <li><div><a>recent</a></div></li>
-            <li><div><a>region</a></div></li>
-            <li><div><a ng-click="pulldown()" ng-class="{'text-color-blue': isClicked}">language</a></div></li>
-            <li><div><a>user</a></div></li>
-            <li><div><a>rating</a></div></li>
-            <li><div><a href="#/form">submit</a></form-open></div></li>
-        </ul>
-        <div ng-show="isClicked" ng-class="{'item-expand' : isClicked}" class="pull-down">
-            <div class="padding-1">
-                <h3 class="text-color-white">choose your language</h3>
-                <ul class="inline-list">
-                    <li ng-if="item" ng-repeat="item in languages" class="padding-1">
-                        <a href="#/{{item}}" ng-click="pulldown()" class="text-color-white">{{item}}</a>
-                    </li>
-                </ul>
+    <nav>
+        <div class="nav-bar text-center" ng-class="{'item-expand' : isClicked}" ng-controller="navController">
+            <ul class="inline-list">
+                <li>filter by :</li>
+                <li><div>recent</div></li>
+                <li><div>region</div></li>
+                <li><div><a ng-click="pulldown()" ng-class="{'text-color-blue': isClicked}">language</a></div></li>
+                <li><div>user</div></li>
+                <li><div>rating</div></li>
+                <li><div><a href="#/form">submit</a></form-open></div></li>
+            </ul>
+            <div ng-show="isClicked" ng-class="{'item-expand' : isClicked}" class="pull-down">
+                <div class="padding-1">
+                    <h3 class="text-color-white">choose your language</h3>
+                    <ul class="inline-list">
+                        <li ng-if="item" ng-repeat="item in languages" class="padding-1">
+                            <a href="#/{{item}}" ng-click="pulldown()" class="text-color-white">{{item}}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
 
     <main ng-view class="flexbox-row flex-1"></main>
     
-    <footer class="no-flex">
-        <h5 class="sub-title text-center margin-auto">Know how to say it now.</h5>
-        <nav class="hide">
-            <ul class="inline-list margin-auto">
-                <li><div>b</div></li><li><div>b</div></li><li><div>b</div></li><li><div>b</div></li>
-            </ul>
-        </nav>
-    </footer>
-
-    <div ng-if="openModal" class="modal">{{item}}</div>
+    <footer class="no-flex"></footer>
 
 </article>
 
 
+<script type="text/javascript" src="scripts/fb.js"></script>
+<script type="text/javascript" src="scripts/ng.js"></script>
 
-
-    <script type="text/javascript" src="scripts/fb.js"></script>
-    <script type="text/javascript" src="scripts/ng.js"></script>
 </body>
 </html>
