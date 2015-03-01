@@ -222,7 +222,12 @@ nav.item-expand {
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, .5);
+    opacity: .5;
+    transition: all 400ms;
+}
+.modal-mask.show-modal {
+    opacity: 1;
 }
 .modal {
     min-height: 300px;

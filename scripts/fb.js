@@ -37,6 +37,7 @@ myApp.controller('MyController', ['$scope', '$firebase',
     $scope.closeModal = function(e) {
       $scope.isOpen = !true;
     };
+    
 
   }
 ]);
@@ -145,8 +146,9 @@ myApp.directive('ngFormElements', function() {
 //ng-modal isOpen
 myApp.directive('ngModal', function() {
   return {
-    restrict: 'A',
-    template: '<div class="modal-mask flexbox-column">' +
+    restrict: 'E',
+    transclude: true,
+    template: '<div class="modal-mask flexbox-column" ng-class="{\'show-modal\': openModal}">' +
                 '<div class="modal display-flex margin-auto">' +
                   '<div ng-click="closeModal()" class="close cursor">X</div>' +
                   '<div class="margin-auto">hello world</div>' +
