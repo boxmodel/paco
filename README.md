@@ -1,3 +1,3 @@
-DELUCIA
+# delucia
 
-An AngularJS and Firebase brainstorm.
+An AngularJS, Firebase, Vimeo brainstorm.
