@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp", ["firebase", "ngRoute", "ngAnimate"]);
+var myApp = angular.module("myApp", ["firebase", "ngRoute", "ngAnimate", "vimeoEmbed"]);
 var ref = new Firebase("https://aestheticdrift.firebaseio.com/web/saving-data/fireblog/posts");
 var updateItem = {};
 
@@ -151,7 +151,7 @@ myApp.directive('ngModal', function() {
     template: '<div class="modal-mask flexbox-column" ng-class="{\'show-modal\': openModal}">' +
                 '<div class="modal display-flex margin-auto">' +
                   '<div ng-click="closeModal()" class="close cursor">X</div>' +
-                  '<div class="margin-auto">hello world</div>' +
+                  '<div class="margin-auto"><vimeo-video player-id="video1" video-id="103384798" player-width="640" player-height="360"></vimeo-video></div>' +
                 '</div>' +
               '</div>'
   }
