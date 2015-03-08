@@ -304,6 +304,24 @@ nav.item-expand {
     margin: 1em 0;
 }
 
+/*BUTTON
+*****************/
+.button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 1px
+}
+.button:hover {
+    box-shadow: 0 0 0 3px #000 inset;
+}
+.button-primary {
+    background: rgb(36, 46, 71);
+    color: #fff;
+    display: inline-block;
+    padding: 1em;
+}
+
 /* gradients */
 .grad-red {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
