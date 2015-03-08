@@ -28,7 +28,7 @@
         <div class="flex-1">&nbsp;</div>
     </header>
     
-    <nav>
+    <!--<nav>
         <div class="nav-bar text-center" ng-class="{'item-expand' : isClicked}" ng-controller="navController">
             <ul class="inline-list">
                 <li>filter by :</li>
@@ -50,11 +50,21 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav>-->
 
-    <main ng-view class="flexbox-row flex-1"></main>
+    <main class="flexbox-row flex-1">
+        <aside>
+            <h3>language</h3>
+            <ul class="menu">
+                <li ng-if="item" ng-repeat="item in languages">
+                    <a href="#/{{item}}">{{item}}</a>
+                </li>
+            </ul>
+        </aside>
+        <section ng-view></section>
+    </main>
     
-    <footer class="no-flex"></footer>
+    <footer class="no-flex">boom</footer>
 
 </article>
 

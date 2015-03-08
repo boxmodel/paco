@@ -1,30 +1,23 @@
-<section class="col-12">
-    <div ng-repeat="language in languages" class="row">
-        <div class="col-2">
-            <nav class="side-menu">
-                <h3>{{language}}</h3>
-            </nav>
-        </div>
-        <div class="col-10 list-cnt">
-            <ol class="video-list border-left">
-                <li ng-repeat="item in messages" ng-click="findscope()">
-                    <div class="video-thumb">
-                        <div class="video-title">
-                            <!--<a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>-->
-                            <a ng-click="openModal()">{{item.title}}</a>
-                        </div>
-                        <div class="video-details">
-                            <b>{{item.date | date:'medium'}}</b>
-                            <i>{{item.date}}</i>
-                            <ul class="inline-list pipes">
-                                <li ng-if="item.language">{{item.language}}</li>
-                                <li ng-if="item.author">{{item.author}} </li>
-                            </ul>
-                        </div>
+<div ng-repeat="language in languages" class="row">
+    <h3>{{language}}</h3>
+    <div class="list-cnt">
+        <ol class="video-list border-left">
+            <li ng-repeat="item in messages" ng-click="findscope()">
+                <div class="video-thumb">
+                    <div class="video-title">
+                        <!--<a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>-->
+                        <a ng-click="openModal()">{{item.title}}</a>
                     </div>
-                </li>
-            </ol>
-        </div>
+                    <div class="video-details">
+                        <b>{{item.date | date:'medium'}}</b>
+                        <i>{{item.date}}</i>
+                        <ul class="inline-list pipes">
+                            <li ng-if="item.language">{{item.language}}</li>
+                            <li ng-if="item.author">{{item.author}} </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ol>
     </div>
-    
-</section>
+</div>

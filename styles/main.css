@@ -25,7 +25,8 @@ ol > li > span > small {
 }
 
 article {
-    background: white;
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(115, 115, 115, 1)), color-stop(100%,rgba(0, 0, 0, 1)));*/
+    background: #eee;
 }
 header {
     border-bottom: 1px solid #e6e6e6;
@@ -37,13 +38,40 @@ footer {
     background-color: whitesmoke;
 }
 main {
-    padding: 1em 0;
-    /*background-color: whitesmoke;*/
+    margin: 1em;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0px #ccc;
 }
 aside {
     box-sizing: border-box;
-    flex: 4;
-    /*width: 30%;*/
+    flex: none;
+    min-width: 200px;
+    max-width: 300px;
+}
+main > aside {
+    /*box-shadow: 0 0 0 3px #000;*/
+    background: #677784;
+    color: white;
+    padding: 1em;
+    overflow-y: auto;
+}
+main > aside h3 {
+    color: #999;
+}
+main > aside > .menu > li {
+    background: rgba(0, 0, 0, 0.1);
+    margin: 1px 0;
+}
+main > aside > .menu > li > a {
+    display: block;
+    padding: 1em;
+    text-transform: capitalize;
+}
+main > section {
+    padding: 1em;
+    overflow-y: auto;
+    width: 100%;
 }
 section {
     /*display: flex;
@@ -52,7 +80,7 @@ section {
     /*text-align: center;*/
     box-sizing: border-box;
     /*max-width: 75%;*/
-    margin: auto;
+    /*margin: auto;*/
 }
 search {
     background: rgba(255, 255, 255, 0.1);
