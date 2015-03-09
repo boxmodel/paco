@@ -22,8 +22,13 @@
         <h1 class="flex-1 flex-start title"><a href="#/">delucia</a></h1>
         <search class="flex-1 margin-auto">
             <div class="flexbox-row search-cnt">
-                <input class="text-center text-color-white" ng-model="hasResults" type="search" placeholder="search" />
+                <input class="text-center text-color-white" ng-model="searchItem" type="search" placeholder="search" />
                 <i class="fa fa-search"></i>
+                <div class="search-results" ng-if="searchItem">
+                    <ul>
+                        <li ng-repeat="item in messages | filter: searchItem"><a  href="#/{{item.language}}/{{item.title}}">{{item.title}}</a></li>
+                    </ul>
+                </div>
             </div>
         </search>
         <div class="flex-1">&nbsp;</div>
