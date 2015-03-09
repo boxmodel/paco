@@ -5,12 +5,10 @@
             <li ng-repeat="item in messages | filter: {language: language}" ng-click="findscope()">
                 <div class="video-thumb">
                     <div class="video-title">
-                        <!--<a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>-->
-                        <a>{{item.title}}</a>
+                        <a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>
+                        <!--<a>{{item.title}}</a>-->
                     </div>
                     <div class="video-details">
-                        <b>{{item.date | date:'medium'}}</b>
-                        <i>{{item.date}}</i>
                         <ul class="inline-list pipes">
                             <li ng-if="item.language">{{item.language}}</li>
                             <li ng-if="item.author">{{item.author}} </li>
