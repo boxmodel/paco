@@ -13,11 +13,11 @@
                 </div>
                 <div class="group">
                     <label for='messageInput'>Lesson:</label>
-                    <textarea ng-model='user.title' type='text' placeholder='enter lesson' rows="10"></textarea>
+                    <textarea ng-model='user.title' type='text' placeholder='enter lesson' rows="3"></textarea>
                 </div>
                 <div class="group">
-                    <label for='videoInput'>Video:</label>
-                    <input ng-model='user.video' type='text' placeholder='video filename'>
+                    <label for='messageInput'>Description:</label>
+                    <textarea ng-model='user.description' type='text' placeholder='enter lesson' rows="10"></textarea>
                 </div>
                 <div class="group">
                     <label>Language</label>
@@ -28,8 +28,8 @@
             </div>
             <div class="row">
                 <div class="group flexbox-column">
-                    <input type="submit" ng-click="submitForm(user)" value="Save" />
-                    <input type="button" ng-click="reset(user)" value="Reset" class="no-border" />
+                    <button ng-click="submitForm(user)" class="button button-primary">Save</button>
+                    <button ng-click="reset(user)" class="button button-secondary">Reset</button>
                 </div>
             </div>
             

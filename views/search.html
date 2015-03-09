@@ -2,11 +2,11 @@
     <h3>{{language}}</h3>
     <div class="list-cnt">
         <ol class="video-list border-left">
-            <li ng-repeat="item in messages" ng-click="findscope()">
+            <li ng-repeat="item in messages | filter: {language: language}" ng-click="findscope()">
                 <div class="video-thumb">
                     <div class="video-title">
                         <!--<a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a>-->
-                        <a ng-click="openModal()">{{item.title}}</a>
+                        <a>{{item.title}}</a>
                     </div>
                     <div class="video-details">
                         <b>{{item.date | date:'medium'}}</b>

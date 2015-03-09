@@ -1,6 +1,5 @@
 var myApp = angular.module("myApp", ["firebase", "ngRoute", "ngAnimate", "vimeoEmbed"]);
 var ref = new Firebase("https://aestheticdrift.firebaseio.com/web/saving-data/fireblog/posts");
-var updateItem = {};
 
 myApp.controller('MyController', ['$scope', '$firebase',
   function($scope, $firebase) {
@@ -29,19 +28,10 @@ myApp.controller('MyController', ['$scope', '$firebase',
     };
     
     $scope.languages = ['english', 'spanish', 'indonesia'];
-    
-    $scope.openModal = function(e) {
-      $scope.isOpen = true;
-    };
-    
-    $scope.closeModal = function(e) {
-      $scope.isOpen = !true;
-    };
-    
-
   }
 ]);
-  
+
+
 myApp.config(function($locationProvider, $routeProvider) {
     $routeProvider
     .when('/home', {
@@ -82,26 +72,6 @@ myApp.config(function($locationProvider, $routeProvider) {
     });
 });
 
-myApp.controller('navController',
-  function($scope) {
-    
-    var isClicked = false;
-    
-    $scope.pulldown = function() {
-
-      if (isClicked == !false) {
-        isClicked = false;
-        $scope.isClicked = false;
-      } else {
-        isClicked = true;
-        $scope.isClicked = true;
-      }
-
-    };
-    
-    $scope.languages = ['english', 'spanish', 'indonesia'];
-    
-});
 
 myApp.controller('myForm', ['$scope', '$firebase',
 function($scope, $firebase) {
@@ -116,6 +86,7 @@ function($scope, $firebase) {
     postsRef.push({
       author: user.name,
       title: user.title,
+      description: user.description,
       language: user.language
     });
     $scope.reset();

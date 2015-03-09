@@ -312,12 +312,14 @@ nav.item-expand {
     cursor: pointer;
     margin: 1px
 }
-.button:hover {
-    box-shadow: 0 0 0 3px #000 inset;
-}
 .button-primary {
     background: rgb(36, 46, 71);
     color: #fff;
+    display: inline-block;
+    padding: 1em;
+}
+.button-secondary {
+    background: #fff;
     display: inline-block;
     padding: 1em;
 }
