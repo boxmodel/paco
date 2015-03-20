@@ -28,6 +28,10 @@ myApp.controller('MyController', ['$scope', '$firebase',
     };
     
     $scope.languages = ['english', 'spanish', 'indonesia'];
+    
+    $scope.closeResults = function() {
+      $(".search-results").hide();
+    };
   }
 ]);
 
