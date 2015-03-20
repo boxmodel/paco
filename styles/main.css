@@ -25,22 +25,17 @@ ol > li > span > small {
 }
 
 article {
-    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(115, 115, 115, 1)), color-stop(100%,rgba(0, 0, 0, 1)));*/
     background: #eee;
 }
 header {
     border-bottom: 1px solid #e6e6e6;
     background: rgb(36, 46, 71);
-    /*min-height: 50px;*/
-    /*max-height: 75px;*/
 }
 footer {
     background-color: whitesmoke;
 }
 main {
     margin: 1em;
-    /*background: white;
-    box-shadow: 0 0 10px 0px #ccc;*/
     overflow: hidden;
 }
 aside {
@@ -50,15 +45,12 @@ aside {
     max-width: 300px;
 }
 main > aside {
-    /*box-shadow: 0 0 0 3px #000;*/
-    /*padding: 1em;*/
     overflow-y: auto;
 }
 main > aside h3 {
     color: #999;
 }
 main > aside > .menu > li {
-    /*background: rgba(0, 0, 0, 0.1);*/
     color: #111;
     margin: 1px 0;
 }
@@ -78,33 +70,17 @@ main > section {
     width: 100%;
 }
 section {
-    /*display: flex;
-    flex-direction: column;
-    flex: 10;*/
-    /*text-align: center;*/
     box-sizing: border-box;
-    /*max-width: 75%;*/
-    /*margin: auto;*/
 }
 search {
-    /*background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;*/
     padding: 5px;
     position: relative;
-    /*box-shadow: 0px 0px 0px 15px #f9f9f9, inset 0px 0px 0px 1px #e9e9e9;*/
 }
 search:hover {
-    /*box-shadow: inset 0px 0px 0px 1px #eee;*/
 }
 .search-cnt {
-    /*flex: 1 1 auto;*/
     text-align: center;
-    /*max-width: 70%;*/
-    /*min-height: 50px;*/
     color: #aaa;
-    /*margin: auto;
-    font-size: 30px;
-    max-width: 75%;*/
 }
 .search-cnt input {
     background-color: transparent;
@@ -117,8 +93,6 @@ search:hover {
     font-size: 1em;
     text-overflow: ellipsis;
     overflow: hidden;
-    /*padding: 20px;
-    text-align: center;*/
 }
 .search-cnt .ng-dirty {
     color: #fff;
@@ -128,9 +102,6 @@ search:hover {
     flex: none;
     border: none;
     background: transparent;
-    /*border: 1px solid #ddd;*/
-    /*padding: 0 20px;
-    font-size: 2em;*/
 }
 .search-cnt label {
     padding: 10px;
@@ -147,13 +118,7 @@ search:hover {
 }
 .search-results {
     background: #677784;
-    /*border: 2px solid #ddd;
-    border-radius: 3px;*/
     color: #fff;
-    /*position: absolute;
-    z-index: 1;
-    top: 50px;
-    left: 0;*/
     text-align: center;
     width: 100%;
     min-height: 50px;
@@ -171,18 +136,11 @@ video {
 nav {
 }
 nav ul {
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*flex: 1;*/
 }
 nav ul > li {
-    /*flex: 1;*/
     color: #474747;
     margin: auto;
 }
-/*nav ul > li > div {
-    margin: auto;
-}*/
 .nav-bar {
     background-color: #f5f5f5;
     border-bottom: 1px solid #ededed;
@@ -202,9 +160,6 @@ nav ul > li {
     border-radius: 0 0 3px 3px;
 }
 .pull-down {
-    /*position: absolute;*/
-    /*top: 100%;*/
-    /*z-index: 2;*/
     width: 100%;
     background-color: rgba(36, 46, 71, 0.75);
     height: 0;
@@ -306,7 +261,6 @@ nav.item-expand {
 /*FORM
 *****************/
 .add-new-form {
-    /*width: 75%;*/
 }
 .add-new-form .group {
     display: flex;
