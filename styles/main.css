@@ -156,10 +156,10 @@ search:hover {
     left: 0;*/
     text-align: center;
     width: 100%;
-    min-height: 50px;
+    /*min-height: 50px;*/
 }
 .search-results li {
-    padding: .5em;
+    /*padding: .5em;*/
 }
 video {
     background-color: #111;
@@ -367,4 +367,33 @@ nav.item-expand {
     background: #fafafa;
     font-size: 12px;
     color: #555;
+}
+
+/*NG-ANIMATE
+******************/
+.animate-repeat {
+  line-height:2.5em;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.25s;
+  transition:all linear 0.25s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:2.5em;
 }

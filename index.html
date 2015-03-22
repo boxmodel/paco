@@ -13,6 +13,7 @@
     <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
     <script src="bower_components/angular-vimeo-embed/dist/angular-vimeo-embed.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
 </head>
 <body ng-app="myApp" ng-controller="MyController">
 <ng-modal ng-if="isOpen"></ng-modal>
@@ -32,7 +33,7 @@
 
     <div class="search-results" ng-if="searchItem">
         <ul>
-            <li ng-repeat="item in messages | filter: searchItem"><a ng-click="closeResults()" href="#/{{item.language}}/{{item.title}}">{{item.title}}</a></li>
+            <li ng-repeat="item in messages | filter: searchItem" class="animate-repeat"><a ng-click="closeResults()" href="#/{{item.language}}/{{item.title}}">{{item.title}}</a></li>
         </ul>
     </div>
 
