@@ -1,5 +1,7 @@
 var myApp = angular.module("myApp", ["firebase", "ngRoute", "ngAnimate", "vimeoEmbed"]);
 var ref = new Firebase("https://aestheticdrift.firebaseio.com/web/saving-data/fireblog/posts");
+var main,
+    showMe;
 
 myApp.controller('MyController', ['$scope', '$firebase',
   function($scope, $firebase) {
@@ -31,7 +33,19 @@ myApp.controller('MyController', ['$scope', '$firebase',
     
     $scope.closeResults = function() {
       $(".search-results").hide();
+      $scope.findscope();
     };
+
+    $scope.findscope = function() {
+      $scope.$parent.main = true;
+      $scope.$parent.showMe = true;
+    };
+
+    $scope.closeBox = function() {
+      $scope.$parent.main = false;
+      $scope.$parent.showMe = false;
+    };
+
   }
 ]);
 

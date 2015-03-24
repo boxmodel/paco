@@ -20,7 +20,7 @@
 
 <article class="flexbox-column full-height">
 
-    <header class="flexbox-row no-flex padding-1">
+    <header ng-show="!main" class="flexbox-row no-flex padding-1">
         <h1 class="flex-1 flex-start title"><a href="#/">delucia</a></h1>
         <search class="flex-1 margin-auto">
             <div class="flexbox-row search-cnt">
@@ -33,12 +33,12 @@
 
     <div class="search-results" ng-if="searchItem">
         <ul>
-            <li ng-repeat="item in messages | filter: searchItem" class="animate-repeat"><a ng-click="closeResults()" href="#/{{item.language}}/{{item.title}}">{{item.title}}</a></li>
+            <li ng-repeat="item in messages | filter: searchItem" ng-click="closeResults()" class="animate-repeat"><a href="#/{{item.language}}/{{item.title}}">{{item.title}}</a></li>
         </ul>
     </div>
 
     <main class="flexbox-row flex-1">
-        <aside>
+        <aside ng-if="!main">
             <ul class="menu">
                 <li><a href="#/">home</a></li>
                 <li ng-if="item" ng-repeat="item in languages">

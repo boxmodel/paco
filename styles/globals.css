@@ -100,8 +100,14 @@ radio {
     background-color: #000;
 }
 
-/* flexbox
+/* display
 *****************************/
+.display-block {
+    display: block;
+}
+.display-inlineblock {
+    display: inline-block;
+}
 .display-inline {
     display: inline;
 }
